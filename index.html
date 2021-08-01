@@ -1,16 +1,33 @@
 <html>
     <head>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <title>Calculator</title>
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
-
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+        <div id="div-main">
+            <h1 class="text-centered">Simple Interest Calculator</h1><hr/>
+            <div id="div-data">
+                <div class="grid-container">
+                    <div class="grid-item">Amount:</div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"><input type="number" value="1"  id="principal" onchange="alertAmount()"></div>  
+                    <div class="grid-item">Rate:</div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"><input type="range" min="1" max="20" step="0.25" value="10.25" id="rate" onchange="updateRate()"> <span id="rate_val">10.25%</span></div>
+                    <div class="grid-item"><label for="years">No. of Years: </label></div>
+                    <div class="grid-item"></div>
+                    <div class="grid-item"><select name="years" id="years" onchange="changeYears()"></select></div>
+                </div>
+                <br>
+                <button onclick="compute()">Compute Interest</button><br/>
+                <span id="result"></span>
+            </div>
+            <hr/>
+            <footer>
+                &#169; This Calculator belongs to <a href="https://github.com/mustafa-sarshar" target="_blank">muSSar</a>.<br/>
+                You can get the source code from <a href="https://github.com/mustafa-sarshar/vftvk-Simple-Interest-Calculator" target="_blank">here</a>.
+            </footer>
+        </div>        
     </body>
 </html>
