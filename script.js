@@ -34,6 +34,7 @@ function alertAmount() {
     if (principal.value <= 0) {
         window.alert("The amount (principal) cannot be zero or negative!!!"); // popup an alert message.
         principal.value = 1; // set the default value "1" for principal.
+        principal.focus();
     }
     document.getElementById("result").innerHTML = ""; // reset the results span element.
 }
